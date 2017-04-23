@@ -1,0 +1,24 @@
+{
+  "name": "fleetmed-clinicians",
+  "version": "1.0.0",
+  "description": "React components that push practicioner information into a database.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test",
+    "start": "webpack-dev-server"
+  },
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-env": "^1.4.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.0",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-hot-loader": "^3.0.0-beta.6",
+    "style-loader": "^0.16.1",
+    "webpack": "^2.4.1",
+    "webpack-dev-server": "^2.4.3"
+  }
+}
