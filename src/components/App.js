@@ -9,7 +9,7 @@ import RegistrationForm from './RegistrationForm'
 // connect wraps a container component and injects props - it connects our react components and redux data
 // connect takes TWO functions. first function: gets store values and passes them as props
   return {
-    initialFormState: store.forms.register
+    
   }
   // return value of this first function gets passed to Layout as props
 })
@@ -18,8 +18,6 @@ export default class App extends React.Component {
 
   constructor(props) {
       super(props)
-
-      this.addUser = this.addUser.bind(this)
   }
 
   componentWillMount() {
@@ -30,9 +28,8 @@ export default class App extends React.Component {
 
   }
 
-  addUser() {
-    console.log("User Added :)");
-    console.log(this.props.initialFormState);
+  componentDidMount() {
+
   }
 
   render() {

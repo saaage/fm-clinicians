@@ -1,22 +1,19 @@
 // This component will render a registration form
-// It accepts a prop as a callback to addUser(), which lives inside of RegistrationForm's parent component App.js
+// If form passes validation, we will push into the database
 
 import React from 'react'
 import { Control, Form, actions } from 'react-redux-form'
 
-export default class RegistrationForm extends React.Component {
+class RegistrationForm extends React.Component {
 
-  constructor(props){
-    super(props)
-  }
-
-  handleSubmit() {
-    console.log('handleSubmit was called')
+  handleSubmit(values) {
+    //handleSubmit will call an action that pushes our new values to the DB
   }
 
   render() {
+
     return (
-      <Form model="registration" onSubmit={(user) => this.handleSubmit(user)}>
+      <Form model="forms.registration" onSubmit={ values => this.handleSubmit(values)}>
         <Control.text model="registration.name" placeholder="Name" />
         <Control.text model="registration.experience" placeholder="Experience" />
         <Control.text model="registration.specialty" placeholder="Specialty" />
@@ -26,3 +23,5 @@ export default class RegistrationForm extends React.Component {
     )
   }
 }
+
+export default RegistrationForm
