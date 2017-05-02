@@ -1,6 +1,7 @@
 import axios from 'axios'
 
 export function fetchPhysicians() {
+
   return function(dispatch) {
     axios.get('https://fleetmed-clinician.firebaseio.com/clinicians.json')
       .then((response) => {

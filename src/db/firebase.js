@@ -1,7 +1,4 @@
 import * as firebase from 'firebase'
-// import * from 'firebase/auth'
-// import * from 'firebase/database'
-// import * from 'firebase/storage'
 
 // Initialize firebaseapp for our store to access
 var config = {
@@ -13,6 +10,6 @@ var config = {
   messagingSenderId: "761559378615"
 };
 
-export default firebase.initializeApp(config)
+firebase.initializeApp(config)
 
-//any reducers that need access to firebase will simply - import firebase as '../db/firebase'
+export const dbRefObject = firebase.database().ref().child('clinicians')
