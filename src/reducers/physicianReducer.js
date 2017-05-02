@@ -8,7 +8,7 @@ export default function reducer(state = initialState, action) {
 
   switch (action.type) {
     case "FETCH_PHYSICIANS_FULFILLED":
-      return Object.assign({} , state, action.payload)
+      return {...state, physicians: action.payload }
     default:
       return state
   }

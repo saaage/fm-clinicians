@@ -16,11 +16,11 @@ import { dbRefObject } from '../db/firebase'
 
 export default class App extends React.Component {
 
-  componentWillMount() {
+  componentWillMount() { 
 
-  this.props.dispatch(fetchPhysicians())
-  // @connect adds methods from store as props to our App component, including dispatch
-  // we will pass this dispatch our fetchPhysicians() action
+    this.props.dispatch(fetchPhysicians())
+    // @connect adds methods from store as props to our App component, including dispatch
+    // we will pass this dispatch our fetchPhysicians() action
 
   }
 

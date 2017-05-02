@@ -29,6 +29,7 @@
     "webpack-dev-server": "^2.4.5"
   },
   "devDependencies": {
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "firebase": "^3.9.0"
   }
 }
