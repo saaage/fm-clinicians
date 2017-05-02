@@ -1,7 +1,7 @@
 import React from 'react'
 import { fetchPhysicians } from '../actions/physicianActions'
 import { connect } from 'react-redux'
-import { dbRefObject } from '../db/firebase'
+import RegistrationForm from './RegistrationForm'
 
 @connect((store) => {
 // NOTE - this style of using connect is called a decorator. It is NOT Recommended
@@ -9,14 +9,20 @@ import { dbRefObject } from '../db/firebase'
 // connect wraps a container component and injects props - it connects our react components and redux data
 // connect takes TWO functions. first function: gets store values and passes them as props
   return {
-    data: store
-  };
+    initialFormState: store.forms.register
+  }
   // return value of this first function gets passed to Layout as props
 })
 
 export default class App extends React.Component {
 
-  componentWillMount() { 
+  constructor(props) {
+      super(props)
+
+      this.addUser = this.addUser.bind(this)
+  }
+
+  componentWillMount() {
 
     this.props.dispatch(fetchPhysicians())
     // @connect adds methods from store as props to our App component, including dispatch
@@ -24,10 +30,14 @@ export default class App extends React.Component {
 
   }
 
+  addUser() {
+    console.log("User Added :)");
+    console.log(this.props.initialFormState);
+  }
 
   render() {
 
-    return <div></div>
+    return <RegistrationForm addUser={this.addUser}/>
 
   }
 }
