@@ -3,11 +3,18 @@
 
 import React from 'react'
 import { Control, Form, actions } from 'react-redux-form'
+import { registerUser } from '../actions/registrationActions'
+import { connect } from 'react-redux'
+
+@connect((store) => {
+  return {}
+})
 
 class RegistrationForm extends React.Component {
 
   handleSubmit(values) {
     //handleSubmit will call an action that pushes our new values to the DB
+    this.props.dispatch(registerUser(values))
   }
 
   render() {

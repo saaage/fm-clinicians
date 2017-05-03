@@ -9,7 +9,7 @@ import RegistrationForm from './RegistrationForm'
 // connect wraps a container component and injects props - it connects our react components and redux data
 // connect takes TWO functions. first function: gets store values and passes them as props
   return {
-    
+
   }
   // return value of this first function gets passed to Layout as props
 })
