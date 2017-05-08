@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './Navbarstyles.css'
+import styles from './Navbar.css'
 
 
 class Navbar extends React.Component {
