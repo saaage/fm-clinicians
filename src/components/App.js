@@ -2,6 +2,7 @@ import React from 'react'
 import { fetchPhysicians } from '../actions/physicianActions'
 import { connect } from 'react-redux'
 import RegistrationForm from './RegistrationForm'
+import Navbar from './Navbar'
 
 @connect((store) => {
 // NOTE - this style of using connect is called a decorator. It is NOT Recommended
@@ -34,7 +35,11 @@ export default class App extends React.Component {
 
   render() {
 
-    return <RegistrationForm />
-
+    return (
+      <div>
+        <Navbar />
+        <RegistrationForm />
+      </div>
+    )
   }
 }

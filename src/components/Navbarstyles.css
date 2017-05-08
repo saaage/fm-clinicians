@@ -1,0 +1,22 @@
+.navbar {
+  display: flex;
+  background-color: #283593;
+}
+
+.logo {
+  flex: 1;
+  color: #90CAF9;
+  margin-left: 10px;
+}
+
+.navbarlist {
+  display: flex;
+  list-style-type: none;
+  flex-grow: 9;
+  justify-content: flex-end;
+}
+
+.navbarlist__item {
+  width: 90px;
+  color: #90CAF9;
+}

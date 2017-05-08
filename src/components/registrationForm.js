@@ -6,25 +6,28 @@ import { Control, Form, actions } from 'react-redux-form'
 import { registerUser } from '../actions/registrationActions'
 import { connect } from 'react-redux'
 
-@connect((store) => {
-  return {}
-})
+@connect((store) => { return {} })
 
 class RegistrationForm extends React.Component {
 
   handleSubmit(values) {
-    //handleSubmit will call an action that pushes our new values to the DB
-    this.props.dispatch(registerUser(values))
+    // this.props.dispatch(registerUser(values))
+
+  }
+
+  isEmail(userEmail) {
+      console.log(userEmail)
   }
 
   render() {
 
     return (
-      <Form model="forms.registration" onSubmit={ values => this.handleSubmit(values)}>
-        <Control.text model="registration.name" placeholder="Name" />
-        <Control.text model="registration.experience" placeholder="Experience" />
-        <Control.text model="registration.specialty" placeholder="Specialty" />
-        <Control.text model="registration.email" placeholder="Email" />
+      <Form name="registration" model="forms.registration" onSubmit={ values => this.handleSubmit(values)}>
+        <Control.text model="registration.name" maxLength="25" placeholder="Name" required />
+        <Control.text type="number" max="99" model="registration.experience" placeholder="Experience" required />
+        <Control.text model="registration.specialty" placeholder="Specialty" required/>
+        {/* change to drop-down */}
+        <Control.text type="email" model="registration.email" placeholder="Email" required />
         <button type="submit">Submit</button>
       </Form>
     )
