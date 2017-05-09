@@ -1,5 +1,4 @@
 // This component will render a registration form
-// If form passes validation, we will push into the database
 
 import React from 'react'
 import { Control, Form, actions, modelReducer } from 'react-redux-form'
@@ -7,30 +6,15 @@ import { registerUser } from '../actions/registrationActions'
 import { connect } from 'react-redux'
 import styles from './RegistrationForm.css'
 
-const initialRegisterState = {
-  name: '',
-  experience: '',
-  specialty: '',
-  email: ''
-}
-
-@connect((store) => { return {
-  users: store.physicians.allPhysicians
-} })
+@connect((store)=>{return{}})
 
 class RegistrationForm extends React.Component {
 
   handleSubmit(values) {
     this.props.dispatch(registerUser(values))
-    // this.props.dispatch(actions.setInitial('registration'))
-  }
-
-  isEmail(userEmail) {
-      console.log(userEmail)
   }
 
   render() {
-
     return (
         <main className={styles.main}>
           <Form className={styles.registrationForm} name="registration" model="forms.registration" onSubmit={ values => this.handleSubmit(values)}>

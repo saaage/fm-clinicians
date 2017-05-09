@@ -5,14 +5,9 @@ import RegistrationForm from './RegistrationForm'
 import Navbar from './Navbar'
 
 @connect((store) => {
-// NOTE - this style of using connect is called a decorator. It is NOT Recommended
-// we have access to 'store' because it is a prop of Provider which is rendering the rest of our components
 // connect wraps a container component and injects props - it connects our react components and redux data
-// connect takes TWO functions. first function: gets store values and passes them as props
-  return {
-
-  }
-  // return value of this first function gets passed to Layout as props
+  return {}
+  // return values are passed to the components as props
 })
 
 export default class App extends React.Component {
@@ -22,19 +17,11 @@ export default class App extends React.Component {
   }
 
   componentWillMount() {
-
     this.props.dispatch(fetchPhysicians())
-    // @connect adds methods from store as props to our App component, including dispatch
-    // we will pass this dispatch our fetchPhysicians() action
-
-  }
-
-  componentDidMount() {
-
+    // @connect also adds methods the dispatch object to props of the wrapped componenent
   }
 
   render() {
-
     return (
       <div>
         <Navbar />
@@ -42,4 +29,5 @@ export default class App extends React.Component {
       </div>
     )
   }
+
 }
