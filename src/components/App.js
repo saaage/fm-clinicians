@@ -1,8 +1,9 @@
 import React from 'react'
-import { fetchPhysicians } from '../actions/physicianActions'
 import { connect } from 'react-redux'
-import RegistrationForm from './RegistrationForm'
+
+import { fetchPhysicians } from '../actions/physicianActions'
 import Navbar from './Navbar'
+import RegistrationForm from './RegistrationForm'
 
 @connect((store) => {
 // connect wraps a container component and injects props - it connects our react components and redux data
