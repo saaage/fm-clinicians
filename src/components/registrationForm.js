@@ -14,13 +14,15 @@ const initialRegisterState = {
   email: ''
 }
 
-@connect((store) => { return {} })
+@connect((store) => { return {
+  users: store.physicians.allPhysicians
+} })
 
 class RegistrationForm extends React.Component {
 
   handleSubmit(values) {
-    // this.props.dispatch(registerUser(values))
-    this.props.dispatch(actions.setInitial('registration'))
+    this.props.dispatch(registerUser(values))
+    // this.props.dispatch(actions.setInitial('registration'))
   }
 
   isEmail(userEmail) {
@@ -36,7 +38,6 @@ class RegistrationForm extends React.Component {
           <Control.text className={styles.registrationForm__input} model="registration.name" maxLength="25" placeholder="Name" required />
           <Control.text className={styles.registrationForm__input} type="number" max="99" model="registration.experience" placeholder="Experience" required />
           <Control.text className={styles.registrationForm__input} model="registration.specialty" placeholder="Specialty" required/>
-          {/* change to drop-down */}
           <Control.text className={styles.registrationForm__input} type="email" model="registration.email" placeholder="Email" required />
           <span className={styles.registrationForm__saveSection}><button className={styles.registrationForm__save} type="submit">SAVE</button></span>
         </Form>
