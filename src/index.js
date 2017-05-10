@@ -1,6 +1,7 @@
 
 import App from './components/App'
 import { AppContainer } from 'react-hot-loader'
+import { Router, Route, IndexRoute } from 'react-router-dom'
 import React from 'react'
 import ReactDOM from 'react-dom'
  'react-hot-loader'
@@ -12,7 +13,9 @@ const render = (Component) => {
   ReactDOM.render(
     <AppContainer>
       <Provider store={store}>
-        <Component />
+        <Router history={Router.history}>
+          <Route path="/" component={Component} />
+        </Router>
       </Provider>
     </AppContainer>,
     document.getElementById('root')
