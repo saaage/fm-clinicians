@@ -21,7 +21,7 @@ class RegistrationForm extends React.Component {
         <main className={styles.main}>
           <Form className={styles.registrationForm} name="registration" model="forms.registration" onSubmit={ values => this.handleSubmit(values)}>
 
-            <h1 className={styles.registrationForm__label}>ABOUT YOU</h1>
+            <h2 className={styles.registrationForm__label}>ABOUT YOU</h2>
 
             <Control.text className={styles.registrationForm__input} model="registration.name" maxLength="25" placeholder="Full Name" required />
 
